@@ -11,7 +11,7 @@ import javax.servlet.http.*;
  */
 public final class ResponseHeaderFilter implements Filter
 {
-	private FilterConfig fc = null;
+	private FilterConfig fc;
 
 	public void init ( final FilterConfig fc ) throws ServletException
 	{
@@ -29,7 +29,7 @@ public final class ResponseHeaderFilter implements Filter
 		final Enumeration parameters = fc.getInitParameterNames();
 		while ( parameters.hasMoreElements() )
 		{
-			final String parameter = (String)parameters.nextElement();
+			final String parameter = (String) parameters.nextElement();
 			if ( response.containsHeader( parameter ) )
 			{
 				response.setHeader( parameter, fc.getInitParameter( parameter ) );
