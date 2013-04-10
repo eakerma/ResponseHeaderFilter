@@ -11,7 +11,7 @@ import javax.servlet.http.*;
  */
 public final class ResponseHeaderFilter implements Filter
 {
-	private FilterConfig fc;
+	private volatile FilterConfig fc;
 
 	public void init ( final FilterConfig fc ) throws ServletException
 	{
