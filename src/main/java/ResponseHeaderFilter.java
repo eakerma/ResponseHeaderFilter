@@ -7,12 +7,13 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 
 /**
- * @author Steven Cole
+ * @author Steven Cole, Michael Akerman
  */
 public final class ResponseHeaderFilter implements Filter
 {
 	private volatile FilterConfig fc;
 
+	@Override
 	public void init ( final FilterConfig fc ) throws ServletException
 	{
 		this.fc = fc;
