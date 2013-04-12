@@ -30,6 +30,9 @@ public final class ResponseHeaderFilter implements Filter
 		while ( parameters.hasMoreElements() )
 		{
 			final String parameter = (String) parameters.nextElement();
+			response.setHeader( parameter, fc.getInitParameter( parameter ) );
+
+			/*
 			if ( response.containsHeader( parameter ) )
 			{
 				response.setHeader( parameter, fc.getInitParameter( parameter ) );
@@ -38,6 +41,7 @@ public final class ResponseHeaderFilter implements Filter
 			{
 				response.addHeader( parameter, fc.getInitParameter( parameter ) );
 			}
+			*/
 		}
 		chain.doFilter( request, response );
 	}
