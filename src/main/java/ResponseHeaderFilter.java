@@ -32,22 +32,11 @@ public final class ResponseHeaderFilter implements Filter
 		{
 			final String parameter = (String) parameters.nextElement();
 			response.setHeader( parameter, fc.getInitParameter( parameter ) );
-
-			/*
-			if ( response.containsHeader( parameter ) )
-			{
-				response.setHeader( parameter, fc.getInitParameter( parameter ) );
-			}
-			else
-			{
-				response.addHeader( parameter, fc.getInitParameter( parameter ) );
-			}
-			*/
 		}
 		chain.doFilter( request, response );
 	}
 
-
+	@Override
 	public void destroy ()
 	{
 		//required by the Filter interface
